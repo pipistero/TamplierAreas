@@ -52,7 +52,7 @@ def get_area_name(area):
         return None
 
 
-def get_companies(start):
+def request_companies(start):
     url = 'https://bitrix.aliton.ru/rest/2460/0wgpqk9iyrtl5t8r/crm.company.list.json'
     payload = {
         'select': [
@@ -83,7 +83,7 @@ def get_all_companies(start, limit):
     last_company_id = 0
 
     while True:
-        companies = get_companies(start)
+        companies = request_companies(start)
 
         if (companies):
             companies_len = len(companies)
